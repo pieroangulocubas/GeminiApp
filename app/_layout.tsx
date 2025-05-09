@@ -13,10 +13,9 @@ import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { ApplicationProvider } from '@ui-kitten/components';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
-import { EvaIconsPack } from '@ui-kitten/eva-icons';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -39,7 +38,6 @@ export default function RootLayout() {
 
   return (
     <Fragment>
-      <IconRegistry icons={EvaIconsPack} />
       <ApplicationProvider {...eva} theme={eva.light}>
         <ThemeProvider
           value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}
