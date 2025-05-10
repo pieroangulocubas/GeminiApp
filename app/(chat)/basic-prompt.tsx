@@ -1,7 +1,7 @@
-import CustomInputBox from '@/components/chat/CustomInputBox';
 import { ChatMessages } from '@/components/chat/ChatMessages';
-import { Layout } from '@ui-kitten/components';
+import CustomInputBox from '@/components/chat/CustomInputBox';
 import { Message } from '@/interfaces/chat.interfaces';
+import { Layout } from '@ui-kitten/components';
 import uuid from 'react-native-uuid';
 
 const messages: Message[] = [
