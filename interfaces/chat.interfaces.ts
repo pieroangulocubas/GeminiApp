@@ -1,7 +1,7 @@
 interface IMessage {
   id: string;
   createdAt: Date;
-  sender: string;
+  sender: 'user' | 'gemini';
   type: 'text' | 'image';
 }
 

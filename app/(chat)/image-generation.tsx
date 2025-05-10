@@ -1,8 +1,8 @@
-import { Layout } from '@ui-kitten/components';
 import CustomInputBox from '@/components/chat/CustomInputBox';
+import PreviousGenerationsGrid from '@/components/image-generation/PreviousGenerationsGrid';
 import Slideshow from '@/components/image-generation/Slideshow';
 import StyleSelector from '@/components/image-generation/StyleSelector';
-import PreviousGenerationsGrid from '@/components/image-generation/PreviousGenerationsGrid';
+import { Layout } from '@ui-kitten/components';
 const placeHolderImages = [
   'https://picsum.photos/id/10/200/300',
   'https://picsum.photos/id/20/200/300',
