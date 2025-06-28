@@ -3,6 +3,7 @@ import { KeyboardAvoidingView, Platform } from 'react-native';
 
 import { useThemeColor } from '@/hooks/useThemeColor';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useState } from 'react';
 interface Props {
   attachments?: any[];
   onSendMessage: (message: string, attachments?: any[]) => void;
@@ -11,6 +12,15 @@ interface Props {
 const CustomInputBox = ({ attachments = [], onSendMessage }: Props) => {
   const isAndroid = Platform.OS === 'android';
   const iconColor = useThemeColor({}, 'icon');
+
+  const [text, setText] = useState('')
+
+  const handlePressSend = () => {
+    if (text.trim() !== '') {
+      onSendMessage(text);
+      setText('');
+    }
+  };
 
   return (
     <KeyboardAvoidingView
@@ -50,9 +60,12 @@ const CustomInputBox = ({ attachments = [], onSendMessage }: Props) => {
           placeholder="Escribe tu mensaje"
           multiline
           numberOfLines={4}
+          value={text}
+          onChangeText={setText}
           style={{ flex: 1 }}
         />
         <Button
+          onPress={handlePressSend}
           appearance="ghost"
           accessoryRight={
             <Ionicons name="paper-plane-outline" size={22} color={iconColor} />
